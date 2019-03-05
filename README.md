@@ -1,6 +1,7 @@
 # Stemme Genkendelse med P5.speech & HTML5 Lyd
+## Lille projekt af Malthe & Nikolaj & Bjørg
 
-## Getting Started
+## Lad os starte
 
 Kræver du har Chrome, da firefox blokere brug af mikrofon i P5, hvorfor, who kn
 
