@@ -6,6 +6,7 @@ let counter;
 let cnv, myRec, btn, txt;
 var billede = 0;
 var song;
+var soda;
 
 function setup() {
     hej = loadImage('assets/waving.jpg');
@@ -16,6 +17,7 @@ function setup() {
     damer = loadImage('assets/damer.jpg');
     kebab = loadImage('assets/kebab.jpg');
     song = loadSound('assets/fortnitelyd.mp3');
+    soda = loadSound('assets/sodavand.mp3');
 
     let SpeechRecognition = window.webkitSpeechRecognition ||
         window.mozSpeechRecognition ||
@@ -102,6 +104,9 @@ function showResult() {
     }
     if (sentence.includes("fortnite")) {
         song.play();
+    }
+    if (sentence.includes("sodavand")) {
+        soda.play();
     }
 }
 }
