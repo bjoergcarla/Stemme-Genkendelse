@@ -96,9 +96,7 @@ function showResult() {
     }
     if (sentence.includes("fortnite")) {
         billede = 5;
-        if ( song.isPlaying() ) { // .isPlaying() returns a boolean
-    song.pause(); // .play() will resume from .pause() position
-    }else {
+        if ( song.isPaused() ) {
         song.play
     }
         }
