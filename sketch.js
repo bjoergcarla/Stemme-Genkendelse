@@ -96,7 +96,7 @@ function showResult() {
     }
     if (sentence.includes("fortnite")) {
         billede = 5;
-        song.play();
+        if (!song.isPlaying()) song.play
     }
     if (sentence.includes("damer")) {
         billede = 6;
