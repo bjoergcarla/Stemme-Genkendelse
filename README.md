@@ -12,7 +12,7 @@ Hvilke ting du skal hente:
 * [Chrome](https://www.google.com/chrome/) - webbrowser
 
 ### Hvad programmet lytter efter og danner billeder eller lyde efter (i form af at tekst felterne ikke loader)
-Hej, Malthe / Malte, Nikolaj, Bjørg, Sodavand, Fortnite, Damer, Kebab.
+Hej, Malthe / Malte, Nikolaj, Carla, Sodavand, Fortnite, Damer, Kebab.
 
 Start Musik, Stop Musik (pauser), op med lyden (skruer godt op)
 
