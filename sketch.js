@@ -27,10 +27,12 @@ function setup() {
 
     cnv = createCanvas(1000, 1000);
     background('blue');
-    txt = createElement("h5", "lytter til: Hej, Malte / Malthe, Nikolaj, Sodavand, Fortnite, Damer og Kebab")
+    txttop = createElement("h1", "lytter for: Hej, Malthe / Malte, Nikolaj, Sodavand, Fortnite, Damer, Kebab.")
+    txt = createElement("h5", "lytter")
         .position(20, 300)
         .style("color:black;")
         .hide();
+    
     
 
     resultP = createP("")
@@ -39,7 +41,7 @@ function setup() {
     //Check browser comp
     if (SpeechRecognition !== undefined) {
         btn = createButton("Klik for at aktivere mikrofon")
-            .position(500, 500)
+            .position(250, 500)
             .style("font-size:1em;background-color:#33C3F0;border-color:#33C3F0;border-radius:8px;color:white;cursor:pointer;")
             .mousePressed(function () {
                 btn.hide();
