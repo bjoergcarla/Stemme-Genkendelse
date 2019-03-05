@@ -83,8 +83,12 @@ function showResult() { //okay det her er et virkelig dårlig måde at vise bill
 
     if (sentence.includes("Start musik")) {
         musik.play();
+        musik.volume = 0.1
     } else if (sentence.includes("Stop musik")) {
         musik.pause();
+    }
+    if (sentence.includes("op med lyden")) {
+        musik.volume = 1
     }
 
     if (sentence.includes("Hej")) {
