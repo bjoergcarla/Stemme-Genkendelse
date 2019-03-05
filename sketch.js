@@ -38,13 +38,13 @@ function setup() {
     //Check browser comp
     if (SpeechRecognition !== undefined) {
         btn = createButton("Klik for at aktivere mikrofon")
-            .position(40, 200)
+            .position(500, 500)
             .style("font-size:1em;background-color:#33C3F0;border-color:#33C3F0;border-radius:8px;color:white;cursor:pointer;")
             .mousePressed(function () {
                 btn.hide();
                 txt.show();
                 myRec = new p5.SpeechRec();
-                myRec.continuous = true;
+                myRec.continuous = false;
                 myRec.interimResults = true;
                 myRec.onResult = showResult;
                 myRec.start();
