@@ -8,9 +8,8 @@ Kræver du har Chrome, da firefox blokere brug af mikrofon i P5, hvorfor, who kn
 
 Hvilke ting du skal hente:
 
-```
-* https://www.google.com/chrome/
-```
+* [Chrome](https://www.google.com/chrome/) - webbrowser
+
 ### Hvad programmet lytter efter og danner billeder eller lyde efter (i form af at tekst felterne ikke loader)
 Hej, Malthe / Malte, Nikolaj, Sodavand, Fortnite, Damer, Kebab.
 
