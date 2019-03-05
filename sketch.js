@@ -5,6 +5,7 @@ let leftDiv;
 let counter;
 let cnv, myRec, btn, txt;
 var billede = 0;
+var song;
 
 function setup() {
     hej = loadImage('assets/waving.jpg');
@@ -14,6 +15,7 @@ function setup() {
     fortnite = loadImage('assets/fortnite.jpg');
     damer = loadImage('assets/damer.jpg');
     kebab = loadImage('assets/kebab.jpg');
+    song = loadSound('assets/fortnitelyd.mp3');
 
     let SpeechRecognition = window.webkitSpeechRecognition ||
         window.mozSpeechRecognition ||
@@ -21,8 +23,8 @@ function setup() {
         window.oSpeechRecognition ||
         window.SpeechRecognition;
 
-    cnv = createCanvas(400, 600);
-    background('cyan');
+    cnv = createCanvas(1000, 1000);
+    background('blue');
     txt = createElement("h5", "lytter")
         .position(20, 300)
         .style("color:black;")
@@ -50,19 +52,19 @@ function setup() {
 
 function draw() {
     if (billede == 1) {
-        image(hej, 0, 0, 400, 300);
+        image(hej, 250, 0, 500, 500);
     } else if (billede == 2) {
-        image(malthe, 0, 0, 400, 300);
+        image(malthe, 250, 0, 500, 500);
     } else if (billede == 3) {
-        image(nikolaj, 0, 0, 400, 300);
+        image(nikolaj, 250, 0, 500, 500);
     } else if (billede == 4) {
-        image(sodavand, 0, 0, 400, 300);
+        image(sodavand, 250, 0, 500, 500);
     } else if (billede == 5) {
-        image(fortnite, 0, 0, 400, 300);
+        image(fortnite, 200, 0, 500, 500);
     } else if (billede == 6) {
-        image(damer, 0, 0, 400, 300);
+        image(damer, 250, 0, 500, 500);
     }else if (billede == 7) {
-        image(kebab, 0, 0, 400, 300);
+        image(kebab, 250, 0, 500, 500);
     }
 }
 
@@ -71,11 +73,16 @@ function showResult() {
         sentence = myRec.resultString;
         resultP.html(sentence);
 
-        if (sentence.includes("Hej")) {
+    if (sentence.includes("Hej")) {
             billede = 1;
-        }
+    }
+    else if (sentence.includes("High")) {
+            billede = 1;
     }
     if (sentence.includes("Malthe")) {
+        billede = 2;
+    }
+    else if (sentence.includes("Malte")) {
         billede = 2;
     }
     if (sentence.includes("Nikolaj")) {
@@ -93,4 +100,8 @@ function showResult() {
     if (sentence.includes("kebab")) {
         billede = 7;
     }
+    if (sentence.includes("fortnite")) {
+        song.play();
+    }
+}
 }
