@@ -5,8 +5,9 @@ let leftDiv;
 let counter;
 let cnv, myRec, btn, txt;
 var billede = 0;
-var song;
-var soda;
+var fortniteslyd = new Audio('assets/fortnitelyd.mp3'); //bruger bare html i stedet for p5 fordi det ikke looper 2 gange som p5.sound gør >:(
+var drik = new Audio('assets/drik.mp3'); //bruger bare html i stedet for p5 fordi det ikke looper 2 gange som p5.sound gør >:(
+var musik = new Audio('assets/musik.mp3');
 
 function setup() {
     hej = loadImage('assets/waving.jpg');
@@ -16,8 +17,7 @@ function setup() {
     fortnite = loadImage('assets/fortnite.jpg');
     damer = loadImage('assets/damer.jpg');
     kebab = loadImage('assets/kebab.jpg');
-    song = loadSound('assets/fortnitelyd.mp3');
-    soda = loadSound('assets/sodavand.mp3');
+
 
     let SpeechRecognition = window.webkitSpeechRecognition ||
         window.mozSpeechRecognition ||
@@ -58,28 +58,34 @@ function setup() {
     }
 }
 
-function draw() {
+function draw() {  //okay det her er et virkelig dårlig måde at vise billeder baseret på at sidde og tælle billederne fra 1-7 
     if (billede == 1) {
-        image(hej, 250, 0, 500, 500);
+        image(hej, 100, 30, 500, 500);
     } else if (billede == 2) {
-        image(malthe, 250, 0, 500, 500);
+        image(malthe, 100, 30, 500, 500);
     } else if (billede == 3) {
-        image(nikolaj, 250, 0, 500, 500);
+        image(nikolaj, 100, 30, 500, 500);
     } else if (billede == 4) {
-        image(sodavand, 250, 0, 500, 500);
+        image(sodavand, 100, 30, 500, 500);
     } else if (billede == 5) {
-        image(fortnite, 250, 0, 500, 500);
+        image(fortnite, 100, 30, 500, 500);
     } else if (billede == 6) {
-        image(damer, 250, 0, 500, 500);
+        image(damer, 100, 30, 500, 500);
     }else if (billede == 7) {
-        image(kebab, 250, 0, 500, 500);
+        image(kebab, 100, 30, 500, 500);
     }
 }
 
-function showResult() {
+function showResult() { //okay det her er et virkelig dårlig måde at vise billeder baseret på at sidde og tælle billederne fra 1-7 
     if (myRec.resultValue == true) {
-        sentence = myRec.resultString.split(' ').pop();
+        sentence = myRec.resultString;
         resultP.html(sentence);
+
+    if (sentence.includes("Start musik")) {
+        musik.play();
+    } else if (sentence.includes("Stop musik")) {
+        musik.pause();
+    }
 
     if (sentence.includes("Hej")) {
             billede = 1;
@@ -97,28 +103,18 @@ function showResult() {
         billede = 3;
     }
     if (sentence.includes("sodavand")) {
-            billede = 4;
-            if (!soda.isPlaying()) {
-                soda.play();
+        billede = 4;
+        drik.play();
+}
+   if (sentence.includes("fortnite")) {
+                billede = 5;
+                fortniteslyd.play();
             }
         }
-            if (sentence.includes("fortnite")) {
-                billede = 5;
-                if (!song.isPlaying()) {
-                    song.play();
-                }
-            }
     if (sentence.includes("damer")) {
         billede = 6;
     }
     if (sentence.includes("kebab")) {
         billede = 7;
     }
-    /*if (sentence.includes("fortnite")) {
-        song.play();
-    }
-    if (sentence.includes("sodavand")) {
-        
-    } */
-}
 }
