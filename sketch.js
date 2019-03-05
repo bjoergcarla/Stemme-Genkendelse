@@ -25,7 +25,7 @@ function setup() {
         window.oSpeechRecognition ||
         window.SpeechRecognition;
 
-    cnv = createCanvas(1000, 1000);
+    cnv = createCanvas(700, 700);
     background('blue');
     txttop = createElement("h1", "lytter for: Hej, Malthe / Malte, Nikolaj, Sodavand, Fortnite, Damer, Kebab.")
     txt = createElement("h5", "lytter")
