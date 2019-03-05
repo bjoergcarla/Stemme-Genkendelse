@@ -27,10 +27,11 @@ function setup() {
 
     cnv = createCanvas(1000, 1000);
     background('blue');
-    txt = createElement("h5", "lytter")
+    txt = createElement("h5", "lytter til: Hej, Malte / Malthe, Nikolaj, Sodavand, Fortnite, Damer og Kebab")
         .position(20, 300)
         .style("color:black;")
         .hide();
+    
 
     resultP = createP("")
         .position(0, 25)
