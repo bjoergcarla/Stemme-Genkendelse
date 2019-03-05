@@ -44,7 +44,7 @@ function setup() {
                 btn.hide();
                 txt.show();
                 myRec = new p5.SpeechRec();
-                myRec.continuous = false;
+                myRec.continuous = true;
                 myRec.interimResults = true;
                 myRec.onResult = showResult;
                 myRec.start();
@@ -72,7 +72,7 @@ function draw() {
 
 function showResult() {
     if (myRec.resultValue == true) {
-        sentence = myRec.resultString;
+        sentence = myRec.resultString.split(' ').pop();
         resultP.html(sentence);
 
     if (sentence.includes("Hej")) {
