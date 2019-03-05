@@ -62,7 +62,7 @@ function draw() {
     } else if (billede == 4) {
         image(sodavand, 250, 0, 500, 500);
     } else if (billede == 5) {
-        image(fortnite, 200, 0, 500, 500);
+        image(fortnite, 250, 0, 500, 500);
     } else if (billede == 6) {
         image(damer, 250, 0, 500, 500);
     }else if (billede == 7) {
@@ -92,9 +92,11 @@ function showResult() {
     }
     if (sentence.includes("sodavand")) {
         billede = 4;
+        soda.play();
     }
     if (sentence.includes("fortnite")) {
         billede = 5;
+        song.play();
     }
     if (sentence.includes("damer")) {
         billede = 6;
@@ -102,11 +104,11 @@ function showResult() {
     if (sentence.includes("kebab")) {
         billede = 7;
     }
-    if (sentence.includes("fortnite")) {
+    /*if (sentence.includes("fortnite")) {
         song.play();
     }
     if (sentence.includes("sodavand")) {
-        soda.play();
-    }
+        
+    } */
 }
 }
