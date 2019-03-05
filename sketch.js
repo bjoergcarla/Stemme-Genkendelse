@@ -96,8 +96,10 @@ function showResult() {
     }
     if (sentence.includes("fortnite")) {
         billede = 5;
-        if (!song.isPlaying()) song.play
+        if ( song.isPlaying() ) { // .isPlaying() returns a boolean
+    song.play(); // .play() will resume from .pause() position
     }
+        }
     if (sentence.includes("damer")) {
         billede = 6;
     }
