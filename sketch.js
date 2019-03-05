@@ -91,15 +91,17 @@ function showResult() {
         billede = 3;
     }
     if (sentence.includes("sodavand")) {
-        billede = 4;
-        soda.play();
-    }
-    if (sentence.includes("fortnite")) {
-        billede = 5;
-        if ( song.isPaused() ) {
-        song.play
-    }
+            billede = 4;
+            if (!soda.isPlaying()) {
+                soda.play();
+            }
         }
+            if (sentence.includes("fortnite")) {
+                billede = 5;
+                if (!song.isPlaying()) {
+                    song.play();
+                }
+            }
     if (sentence.includes("damer")) {
         billede = 6;
     }
