@@ -17,6 +17,7 @@ function setup() {
     fortnite = loadImage('assets/fortnite.jpg');
     damer = loadImage('assets/damer.jpg');
     kebab = loadImage('assets/kebab.jpg');
+    bjorg = loadImage('assets/bjorg.png');
 
 
     let SpeechRecognition = window.webkitSpeechRecognition ||
@@ -27,19 +28,19 @@ function setup() {
 
     cnv = createCanvas(700, 700);
     background('blue');
-    txttop = createElement("h6", "lytter for: Hej, Malthe / Malte, Nikolaj, Sodavand, Fortnite, Damer, Kebab.")
-        .position(100,10)
+    txttop = createElement("h6", "lytter for: Hej, Malthe / Malte, Nikolaj, Carla, Sodavand, Fortnite, Damer, Kebab.")
+        .position(100, 10)
         .style("color:white;")
         .show();
     txtbund = createElement("h6", "Musik controls lytter for: Start Musik, Stop Musik (pauser), op med lyden (skruer godt op)")
-        .position(70,650)
-        .style("color:pink");        
+        .position(70, 650)
+        .style("color:pink");
     txt = createElement("h5", "lytter")
         .position(20, 300)
         .style("color:black;")
         .hide();
-    
-    
+
+
 
     resultP = createP("")
         .position(0, 25)
@@ -74,8 +75,10 @@ function draw() {  //okay det her er et virkelig dårlig måde at vise billeder 
         image(fortnite, 100, 30, 500, 500);
     } else if (billede == 6) {
         image(damer, 100, 30, 500, 500);
-    }else if (billede == 7) {
+    } else if (billede == 7) {
         image(kebab, 100, 30, 500, 500);
+    } else if (billede == 8) {
+        image(bjorg, 100, 30, 500, 500);
     }
 }
 
@@ -84,43 +87,46 @@ function showResult() { //okay det her er et virkelig dårlig måde at vise bill
         sentence = myRec.resultString;
         resultP.html(sentence);
 
-    if (sentence.includes("Start musik")) { //kan registere det som start stop musik
-        musik.play();
-        musik.volume = 0.1
-    } else if (sentence.includes("Stop musik")) { //vice versa
-        musik.pause();
-    }
-    if (sentence.includes("op med lyden")) { //har svært med at høre >:(        musik.volume = 1
-    }
-
-    if (sentence.includes("Hej")) {
-            billede = 1;
-    }
-    else if (sentence.includes("High")) {
-            billede = 1;
-    }
-    if (sentence.includes("Malthe")) {
-        billede = 2;
-    }
-    else if (sentence.includes("Malte")) {
-        billede = 2;
-    }
-    if (sentence.includes("Nikolaj")) {
-        billede = 3;
-    }
-    if (sentence.includes("sodavand")) {
-        billede = 4;
-        drik.play();
-}
-   if (sentence.includes("fortnite")) {
-                billede = 5;
-                fortniteslyd.play();
-            }
+        if (sentence.includes("Start musik")) { //kan registere det som start stop musik
+            musik.play();
+            musik.volume = 0.1
+        } else if (sentence.includes("Stop musik")) { //vice versa
+            musik.pause();
         }
+        if (sentence.includes("op med lyden")) { //har svært med at høre >:(        musik.volume = 1
+        }
+
+        if (sentence.includes("Hej")) {
+            billede = 1;
+        }
+        else if (sentence.includes("High")) {
+            billede = 1;
+        }
+        if (sentence.includes("Malthe")) {
+            billede = 2;
+        }
+        else if (sentence.includes("Malte")) {
+            billede = 2;
+        }
+        if (sentence.includes("Nikolaj")) {
+            billede = 3;
+        }
+        if (sentence.includes("sodavand")) {
+            billede = 4;
+            drik.play();
+        }
+        if (sentence.includes("fortnite")) {
+            billede = 5;
+            fortniteslyd.play();
+        }
+    }
     if (sentence.includes("damer")) {
         billede = 6;
     }
     if (sentence.includes("kebab")) {
         billede = 7;
     }
+    if (sentence.includes('Carla')) {
+        billede = 8;
+}
 }
