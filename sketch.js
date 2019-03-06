@@ -90,7 +90,8 @@ function showResult() { //okay det her er et virkelig dårlig måde at vise bill
     } else if (sentence.includes("Stop musik")) { //vice versa
         musik.pause();
     }
-    if (sentence.includes("op med lyden")) { //har svært med at høre >:(        musik.volume = 1
+    if (sentence.includes("op med lyden")) { //har svært med at høre >:(        
+        musik.volume = 1
     }
 
     if (sentence.includes("Hej")) {
