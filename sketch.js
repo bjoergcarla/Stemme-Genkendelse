@@ -17,7 +17,7 @@ function setup() {
     fortnite = loadImage('assets/fortnite.jpg');
     damer = loadImage('assets/damer.jpg');
     kebab = loadImage('assets/kebab.jpg');
-    bjorg = loadImage('assets/bjorg.png');
+    bjorg = loadImage('assets/Bjorg.png');
 
 
     let SpeechRecognition = window.webkitSpeechRecognition ||
